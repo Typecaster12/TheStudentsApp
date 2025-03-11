@@ -1,0 +1,30 @@
+/* Navbar.css */
+.navbar {
+    height: 70px;
+    background: linear-gradient(to right, #1e1e2f, #3f0d61);
+    padding: 16px 32px;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.3);
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+
+.navbar-logo {
+    font-size: 24px;
+    font-weight: bold;
+    color: white;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    letter-spacing: 1px;
+}
+
+/* Responsive for small screens */
+@media (max-width: 600px) {
+    .navbar {
+        padding: 12px 20px;
+    }
+
+    .navbar-logo {
+        font-size: 20px;
+    }
+}
