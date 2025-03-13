@@ -3,14 +3,19 @@ import './App.css';
 import Features from './Components/Features/Features';
 import Hero from './Components/Hero/Hero';
 import Navbar from './Components/Navbar/Navbar';
-import Pomodoro from './Components/Pomodoro/Pomodoro';
 import FlashCardsApp from './Components/FlashCards/FlashCardsApp';
+import WorkTimer from './Components/Pomodoro/PomodoAppStr/WorkTimer';
+import ShortBreak from './Components/Pomodoro/PomodoAppStr/ShortBreak';
+import LongBreak from './Components/Pomodoro/PomodoAppStr/LongBreak';
+import PomodoroLayout from './Components/Pomodoro/Layout/PomodoroLayout';
 
 const App = () => {
   const location = useLocation();
 
   // Hide Navbar when on the flashcards route
-  const hideNavbar = location.pathname.startsWith('/flashcards');
+  const hideNavbar =
+    location.pathname.startsWith('/flashcards') ||
+    location.pathname.startsWith('/pomodoro');
 
   return (
     <div className="app_container">
@@ -26,8 +31,15 @@ const App = () => {
             </>
           }
         />
-        <Route path="/pomodoro" element={<Pomodoro />} />
         <Route path="/flashcards" element={<FlashCardsApp />} />
+
+        {/* Nested Pomodoro Routes */}
+        <Route path="/pomodoro" element={<PomodoroLayout />}>
+          <Route index element={<WorkTimer />} /> {/* Default Route */}
+          <Route path="work" element={<WorkTimer />} />
+          <Route path="short" element={<ShortBreak />} />
+          <Route path="long" element={<LongBreak />} />
+        </Route>
       </Routes>
     </div>
   );
