@@ -8,6 +8,8 @@ import WorkTimer from './Components/Pomodoro/PomodoAppStr/WorkTimer';
 import ShortBreak from './Components/Pomodoro/PomodoAppStr/ShortBreak';
 import LongBreak from './Components/Pomodoro/PomodoAppStr/LongBreak';
 import PomodoroLayout from './Components/Pomodoro/Layout/PomodoroLayout';
+import Notes from './Components/NotesApp/Notes';
+import TimePlaner from './Components/TimePlaner/TimePlaner';
 
 const App = () => {
   const location = useLocation();
@@ -15,7 +17,8 @@ const App = () => {
   // Hide Navbar when on the flashcards route
   const hideNavbar =
     location.pathname.startsWith('/flashcards') ||
-    location.pathname.startsWith('/pomodoro');
+    location.pathname.startsWith('/pomodoro') ||
+    location.pathname.startsWith('/notes');
 
   return (
     <div className="app_container">
@@ -40,6 +43,10 @@ const App = () => {
           <Route path="short" element={<ShortBreak />} />
           <Route path="long" element={<LongBreak />} />
         </Route>
+
+        <Route path='/notes' element={<Notes />} />
+
+        <Route path='/timeplaner' element={<TimePlaner/>} />
       </Routes>
     </div>
   );

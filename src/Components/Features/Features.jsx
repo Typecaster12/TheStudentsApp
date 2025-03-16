@@ -23,9 +23,15 @@ const Features = () => {
                 </div>
 
                 <div className="card">
-                    <h3>Pomodoro Timer</h3>
-                    <p>Boost your focus using time blocks.</p>
-                    <button onClick={() => route('/pomodoro')}>Open</button>
+                    <h3>Notes Section</h3>
+                    <p>Make Your own custome notes.</p>
+                    <button onClick={() => route('/notes')}>Open</button>
+                </div>
+
+                <div className="card">
+                    <h3>Time Scheduler</h3>
+                    <p>Plan your whole day and manage your time.</p>
+                    <button onClick={() => route('/timeplaner')}>Open</button>
                 </div>
 
                 <div className="card">
@@ -33,11 +39,7 @@ const Features = () => {
                     <p>Boost your focus using time blocks.</p>
                     <button onClick={() => route('/pomodoro')}>Open</button>
                 </div>
-                <div className="card">
-                    <h3>Pomodoro Timer</h3>
-                    <p>Boost your focus using time blocks.</p>
-                    <button onClick={() => route('/pomodoro')}>Open</button>
-                </div>
+                
                 <div className="card">
                     <h3>Pomodoro Timer</h3>
                     <p>Boost your focus using time blocks.</p>
